@@ -30,7 +30,10 @@ class Bag
   end
 
   def take(amount_removed)
-   removed = @candies[0..amount_removed]
-    binding.pry
+    removed = []
+    amount_removed.times do |thing|
+      removed << @candies.pop
+    end
+    removed
   end
 end

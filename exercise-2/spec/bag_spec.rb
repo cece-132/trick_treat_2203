@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../lib/bag'
 require_relative '../lib/candy'
 
@@ -101,11 +102,11 @@ RSpec.describe Bag do
     expect(bag.count).to eq(1)
   end
 
-  xit 'can take one candy' do
+  it 'can take one candy' do
     bag = Bag.new
-    bag << Candy.new('Lifesavers')
+    bag.candies << Candy.new('Lifesavers')
 
     candy = bag.take(1)
-    expect(candy.type).to eq('Lifesavers')
+    expect(candy.first.type).to eq('Lifesavers')
   end
 end
